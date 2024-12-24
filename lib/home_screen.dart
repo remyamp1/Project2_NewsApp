@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     return Text(state.categoriesMessage.toString());
                   case Status.success:
                     return ListView.builder(
-                        itemCount: state.newsCategoriesList!.articles!.length,
+                        itemCount: state.newsCategoriesList!.articles.length,
                         shrinkWrap: true,
                         itemBuilder: (context , index){
 
@@ -143,7 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           children: [
                                             Expanded(
-                                              child: Text(state.newsCategoriesList!.articles![index].source!.name.toString() ,
+                                              child: Text(state.newsCategoriesList!.articles![index].source.name.toString() ,
                                                 style: TextStyle(
                                                     fontSize: 14 ,
                                                     color: Colors.black54,

@@ -25,7 +25,8 @@ class HomeAppBarWidget extends StatelessWidget {
         },
         icon: Icon(Icons.newspaper)
       ),
-      title: Text('News' , style: TextStyle(fontSize: 24 , fontWeight: FontWeight.w700),),
+      title: Text('News' , style: TextStyle(fontSize: 24 ,
+       fontWeight: FontWeight.bold,color: Colors.blue),),
       actions: [
         PopupMenuButton<FilterList>(
             initialValue: selectedMenu,

@@ -1,63 +1,67 @@
-
-
-
-
-
-import 'dart:async';
 import 'package:apinwes_demo/home_screen.dart';
 import 'package:flutter/material.dart';
-
-
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-
-
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+class LandindPage extends StatefulWidget {
+  const LandindPage({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<LandindPage> createState() => _LandindPageState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
-
-
-  @override
-  void initState() {
-    
-    super.initState();
-    
-    Timer(Duration(seconds: 2), () { 
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-    });
-
-  }
-  
-  
+class _LandindPageState extends State<LandindPage> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.sizeOf(context).height * 1 ;
-  //  final width = MediaQuery.sizeOf(context).width * 1 ;
-
-    return  Scaffold(
-      body: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/images/heaith.jpeg',
-            fit: BoxFit.cover,
-              height:  height * .5,
-            ),
-            SizedBox(height: height * 0.04,),
-            Text('TOP HEADLINES' , style: TextStyle(letterSpacing: .6 , color: Colors.grey.shade700),),
-            SizedBox(height: height * 0.04,),
-            SpinKitChasingDots(
-              color: Colors.blue ,
-                size: 40,
-            )
-
-          ],
+    return Scaffold(
+body: Container(
+  margin: EdgeInsets.symmetric(horizontal: 10.0,vertical: 10.0),
+  child: Column(
+  
+    children: [
+      Material(
+        elevation: 3.0,
+        borderRadius: BorderRadius.circular(30),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: Image.asset("assets/images/news.jpeg",
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height/1.7,
+          fit: BoxFit.cover,),
         ),
       ),
+      SizedBox(height: 15,),
+      Text("News from around the\n        world for you",style: TextStyle(fontSize:26 ,fontWeight: FontWeight.bold,
+      color: Colors.black),),
+        SizedBox(height: 15,),
+      Text("Best time to read, take your time to read\n          a little more of this world",style: TextStyle(fontSize:18 ,fontWeight: FontWeight.bold,
+      color: Colors.black45),),
+
+      SizedBox(height: 15,),
+      GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+        },
+        child: Container(
+            width: MediaQuery.of(context).size.width/1.2,
+            
+          child: Material(
+             borderRadius: BorderRadius.circular(30),
+             elevation: 5.0,
+            child: Container(
+             padding: EdgeInsets.symmetric(vertical: 20),
+              decoration: BoxDecoration(color: Colors.blue,
+              borderRadius: BorderRadius.circular(30)),
+              child: Center(
+                child: Text("Get Started",style: TextStyle(
+                  fontSize:17 ,
+                  fontWeight: FontWeight.bold,
+                      color: Colors.white),),
+              ),
+            ),
+          ),
+        ),
+      )
+    ],
+  ),
+),
     );
   }
 }
