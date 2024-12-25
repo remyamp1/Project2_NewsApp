@@ -9,15 +9,20 @@ import 'package:intl/intl.dart';
 
 
 class NewsDetailScreen extends StatefulWidget {
-  String newsImage;
-  String newsTitle;
-  String newsDate;
-  String newsAuthor;
-  String newsDesc;
-  String newsContent;
-  String newsSource;
-  NewsDetailScreen(this.newsImage, this.newsTitle, this.newsDate,
-      this.newsAuthor, this.newsDesc, this.newsContent, this.newsSource);
+ final String newsImage;
+ final String newsTitle;
+final  String newsDate;
+ final String newsAuthor;
+ final String newsDesc;
+ final String newsContent;
+ final String newsSource;
+  NewsDetailScreen( this.newsImage,
+   this.newsTitle,
+    this.newsDate,
+     this.newsAuthor,
+      this.newsDesc, 
+   this.newsContent,
+     this.newsSource);
 
 
   @override

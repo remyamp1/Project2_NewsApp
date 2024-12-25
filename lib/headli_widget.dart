@@ -40,13 +40,13 @@ class HeadlinesWidget extends StatelessWidget {
             String newsSource =
             state.newsList!.articles![index].source!.name!;
             Navigator.push(context, MaterialPageRoute(builder: (context) => NewsDetailScreen(
-                newsImage,
+           newsImage,
                 newsTitle,
                 newsDate,
                 newsAuthor,
                 newsDesc,
                 newsContent,
-                newsSource
+                newsSource 
             )));
           },
           child: SizedBox(

@@ -107,7 +107,9 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                       child: ListView.builder(
                           itemCount: state.newsCategoriesList!.articles!.length,
                           itemBuilder: (context , index){
-
+             if (state.newsCategoriesList!.articles == null) {
+                return SizedBox.shrink(); // Return an empty widget if articles is null
+              }
                             DateTime dateTime = DateTime.parse(state.newsCategoriesList!.articles![index].publishedAt.toString());
                             return  Padding(
                               padding: const EdgeInsets.only(bottom: 15),
@@ -148,7 +150,8 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                               Expanded(
-                                                child: Text(state.newsCategoriesList!.articles![index].source!.name.toString() ,
+                                                child: Text(
+                                                  state.newsCategoriesList!.articles![index].source!.name.toString() ,
                                                   style: TextStyle(
                                                       fontSize: 14 ,
                                                       color: Colors.black54,
